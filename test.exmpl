@@ -1,2 +1,7 @@
-foo
-		bar # tabs here
+namespace example {
+	module foo {
+		fn bar() {
+			baz = "hello world"
+		}
+	}
+}
