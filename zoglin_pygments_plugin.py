@@ -17,7 +17,7 @@ class ZoglinLexer(RegexLexer):
             (r'#.+', Comment),
             (
               words(("namespace", "module", "fn",
-                "if", "else", "while"),
+                "if", "else", "while", "return", "break", "continue"),
                 suffix = r'\b'
               ),
               Keyword
@@ -25,7 +25,7 @@ class ZoglinLexer(RegexLexer):
             include("literals"),
             (r'(?<=namespace) *\w+', Name.Namespace),
             (r'(?<=module) *\w+', Name.Class),
-            (r'[$&@]?(\w+:|:|~)?[\w\/\-]+:?', Name.Variable),
+            (r'[$&@]?(\w+:|:|~)?[\w\/]+:?', Name.Variable),
             (r'[{}()\[\]]', Punctuation),
         ],
         "literals": [
