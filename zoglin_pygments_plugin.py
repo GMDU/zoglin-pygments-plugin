@@ -34,8 +34,8 @@ class ZoglinLexer(RegexLexer):
             include("commands"),
             (r'(?<=namespace) *\w+', Name.Namespace),
             (r'(?<=module) *\w+', Name.Class),
-            (r'[$&@]?(\w+:|:|~)?[\w\/]+(?=\s*\()', Name.Function),
-            (r'[$&@]?(\w+:|:|~)?[\w\/]+:?', Name.Variable),
+            (r'[$&@%]?(\w+:|:|~)?[\w\/]+(?=\s*\()', Name.Function),
+            (r'[$&@%]?(\w+:|:|~)?[\w\/]+:?', Name.Variable),
             (r'[{}()\[\]]', Punctuation),
         ],
         "commands": [
